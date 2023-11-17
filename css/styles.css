@@ -1,1 +1,22 @@
 
+.container{
+    background-color: yellow;
+    text-align: center;
+    color: blue;
+}
+
+.pokemon-form {
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+
+}
+
+.pokemon-select {
+    
+}
+
+.get-pokemon {
+    
+}
