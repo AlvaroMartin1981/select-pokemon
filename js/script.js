@@ -1,3 +1,46 @@
+
+/*const obtenerPokemon = document.getElementById('get-pokemon');
+const select =document.getElementById('pokemon-select')
+const container =document.getElementsByClassName('.container')
+const container1=document.getElementById('contenedorpokemon')
+const ENDPOINT = 'https://pokeapi.co/api/v2/pokemon/'
+
+
+
+obtenerPokemon.addEventListener('click',()=>{
+    const pokemonName= select.value;
+    console.log(pokemonName)
+ 
+ InformacionPokemon(pokemonName)
+ })
+
+function InformacionPokemon(pokemon){
+    fetch(`${ENDPOINT}${pokemon}`)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+        container1.innerHTML=''
+        let name = data.name;
+        let img = data.sprites.front_default;
+        let type = data.types[0].type.name;
+        let height = data.height;
+        let weight = data.weight;
+
+       let infopokemon= `
+        <div class="contenedorPokemon">
+        <h3> ${name}</h3>
+        <img src="${img}" width="50%" />
+        <ul>
+        <li>Type: ${type}</li>
+        <li>Height: ${height}</li>
+        <li>Weight: ${weight}</li>
+        </ul>
+            </div>
+            `
+            container1.innerHTML += infopokemon
+            console.log(container1)
+    })}*/
+
 //1. selector (condicion)
 //2. informacion (click)/fetch
 // nombre
@@ -6,30 +49,45 @@
 // altura 
 // peso
 
-
-/*const pokeBulbasaur = document.getElementById('pokemon-select').bulbasaur
-const pokeCharmander = document.getElementById('pokemon-select').charmander
-const pokeSquirtle = document.getElementById('pokemon-select').squirtle
-const getPokemon = document.getElementById('get-pokemon')*/
-
-
+const obtenerPokemon = document.getElementById('get-pokemon');
+const select =document.getElementById('pokemon-select')
+const container =document.getElementsByClassName('.container')
+const container1=document.getElementById('contenedorpokemon')
+const ENDPOINT = 'https://pokeapi.co/api/v2/pokemon/'
 
 
-/*creo que hay que usar o onchange en html o un eventlistener con change
-parece mas facil con onchange.
-const seleccionValor = document.querySelector('#pokemon-select');
-seleccionValor.addEventListener('change', => {
-})*/
 
-function showSelected (){
-    //para obtener el valor
-    let cod = document.getElementById('pokemon-select').value;
-    //alert(cod);
-    //para obtener el texto
-    let combo = document.getElementById('pokemon-select');
-    let selected = combo.options[combo.selectedIndex].text;
-    //alert(selected);
-    console.log(showSelected);
-}
+obtenerPokemon.addEventListener('click',()=>{
+    const pokemonName= select.value;
+    console.log(pokemonName)
 
+ InformacionPokemon(pokemonName)
+ })
+
+function InformacionPokemon(pokemon){
+    fetch(`${ENDPOINT}${pokemon}`)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+        container1.innerHTML=''
+        let name = data.name;
+        let img = data.sprites.front_default;
+        let type = data.types[0].type.name;
+        let height = data.height;
+        let weight = data.weight;
+
+       let infopokemon= `
+        <div class="contenedorPokemon">
+        <h3> ${name}</h3>
+        <img src="${img}" width="50%" />
+        <ul>
+        <li>Type: ${type}</li>
+        <li>Height: ${height}</li>
+        <li>Weight: ${weight}</li>
+        </ul>
+            </div>
+            `
+            container1.innerHTML += infopokemon
+            console.log(container1)
+    })}
 
